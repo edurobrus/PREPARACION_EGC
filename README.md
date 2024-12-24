@@ -22,7 +22,6 @@
    sudo apt-get install -f
    ```
 
-
 # Ejercicio práctico: Configurar GitHub y forkear
 
 ### 1. Instalar Git
@@ -71,6 +70,7 @@ Para visualizar la clave pública que acabas de generar y copiarla, utiliza esto
 
    Esto imprimirá tu clave pública en la terminal.
 
+
 ### 5. Agregar la clave SSH a GitHub
 
 1. Copia la clave pública (todo el contenido que aparece cuando ejecutas `cat id_rsa.pub`).
@@ -86,3 +86,64 @@ Para visualizar la clave pública que acabas de generar y copiarla, utiliza esto
 6. En el campo **Key**, pega la clave pública que copiaste (desde `id_rsa.pub`).
 
 7. Haz clic en **Add SSH key** para completar el proceso.
+
+
+# Trabajar con GitHub (Clonar un repositorio y realizar cambios)
+
+### 1. Clonar el repositorio con SSH
+
+Para clonar un repositorio usando SSH, utiliza el siguiente comando (sustituye `url_ssh` con la URL del repositorio que deseas clonar):
+
+```bash
+git clone git@github.com:edurobrus/PREPARACION_EGC.git
+```
+
+### 2. Inicializar un repositorio local
+
+Si no has clonado un repositorio, puedes inicializar un nuevo repositorio en tu directorio de trabajo:
+
+```bash
+git init
+```
+
+### 3. Añadir archivos al repositorio
+
+Para añadir los archivos del directorio actual al repositorio:
+
+```bash
+git add .
+```
+
+### 4. Hacer un commit
+
+Realiza un commit con un mensaje que describa los cambios realizados:
+
+```bash
+git commit -m "Add content"
+```
+
+### 5. Cambiar a la rama principal (main)
+
+Si aún no tienes una rama principal llamada `main`, puedes renombrar la rama actual a `main`:
+
+```bash
+git branch -M main
+```
+
+### 6. Agregar el repositorio remoto
+
+Agrega el repositorio remoto (si aún no lo has hecho) para poder subir tus cambios. Asegúrate de usar la URL SSH correcta:
+
+```bash
+git remote add origin git@github.com:edurobrus/PREPARACION_EGC.git
+```
+
+### 7. Subir los cambios al repositorio remoto
+
+Sube los cambios de la rama `main` al repositorio remoto en GitHub:
+
+```bash
+git push -u origin main
+```
+
+Con estos pasos, habrás configurado tu entorno de trabajo en Git, creado y añadido tu clave SSH a GitHub, y podrás clonar, modificar y subir repositorios con Git.
